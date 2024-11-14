@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM de Médicos</title>
+</head>
+<body>
+    <h1>Clinica grupo 1</h1>
+
+    <!-- Formulario para agregar médicos -->
+    <h2>Agregar Médico</h2>
+    <form id="formAddMedico">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="text" id="apellido" placeholder="Apellido" required>
+        <input type="text" id="dni_medico" placeholder="DNI Médico" required>
+        <input type="number" id="cant_dispuesto" placeholder="Cantidad Dispuesta" required>
+        <input type="date" id="fecha_ingreso" required>
+        <input type="text" id="cuil" placeholder="CUIL/CUIT" required>
+        <button type="submit">Agregar Médico</button>
+    </form>
+
+    <h2>Lista de Médicos</h2>
+    <ul id="medicosList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
