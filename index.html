@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABM de Médicos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Clinica grupo 1</h1>
@@ -20,8 +21,28 @@
         <button type="submit">Agregar Médico</button>
     </form>
 
-    <h2>Lista de Médicos</h2>
-    <ul id="medicosList"></ul>
+
+    <h1>Listado de Médicos</h1>
+
+    <button id="obtenerMedicosBtn">Obtener Médicos</button>
+
+    <div id="medicosList">
+        <table id="medicosTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Eliminar</th>
+                    <th>Nombre</th>
+                    <th>DNI</th>
+                    <th>Matricula</th>
+                    <th>CUIL/CUIT</th>
+                    <th>Cantidad Dispuesta</th>
+                    <th>Fecha de Ingreso</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p id="noMedicosMessage" style="display: none;">No hay médicos disponibles.</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
