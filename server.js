@@ -63,9 +63,10 @@ app.get('/medicos', async (req, res) => {
 // Ruta para agregar un nuevo médico
 app.post('/medicos', async (req, res) => {
   const { apellido, nombre, dni_medico, cant_dispuesto, fecha_ingreso, CUIL_CUIT } = req.body;
+  const foto = '0x1234567890ABCDEF';
   try {
-    const query = `INSERT INTO dbo.MEDICO (apellido, nombre, dni_medico, cant_dispuesto, fecha_ingreso, CUIL_CUIT) 
-                   VALUES ('${apellido}', '${nombre}', '${dni_medico}', ${cant_dispuesto}, '${fecha_ingreso}', '${CUIL_CUIT}')`;
+    const query = `INSERT INTO dbo.MEDICO (apellido, nombre, foto, dni_medico, cant_dispuesto, fecha_ingreso, CUIL_CUIT) 
+                   VALUES ('${apellido}', '${nombre}', CONVERT(varbinary(max), '${foto}'), '${dni_medico}', ${cant_dispuesto}, '${fecha_ingreso}', '${CUIL_CUIT}')`;
     await pool.request().query(query);
     res.status(201).send('Médico agregado correctamente');
   } catch (err) {
